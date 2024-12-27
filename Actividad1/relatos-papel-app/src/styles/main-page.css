@@ -1,0 +1,23 @@
+
+.search-bar {
+    width: 100%;
+    max-width: 500px;
+    margin: 2rem 0 1rem 7rem;
+    margin-left: 20;
+}
+
+.card-img-top {
+    object-fit: cover;
+    width: 41%; 
+    height: 250px; 
+    margin: 0 auto; 
+}
+
+
+.card-body {
+    text-align: center;
+}
+
+.card .btn {
+    margin-top: auto;
+}

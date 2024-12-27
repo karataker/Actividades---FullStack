@@ -1,0 +1,16 @@
+.landing-page {
+    text-align: center;
+    height: 66vh;
+  }
+  
+.welcome-message {
+    text-align: center;
+    margin-top: 20px;
+    justify-content: center;
+    font-size: 24px;
+  }
+
+.spinner-border {
+  width: 70px;
+  height: 70px;
+}

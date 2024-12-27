@@ -1,0 +1,48 @@
+.book-details {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.book-details .row {
+    display: flex;
+    align-items: center;
+}
+
+.book-details .book-image {
+    width: 100%;
+    max-width: 263px; 
+    height: 380px;  
+    object-fit: cover;
+}
+
+.book-details .details {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.book-details .author {
+    font-style: italic;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.book-details .title {
+    font-weight: bold;
+    margin-top: 0.5rem;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.book-details .description {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+
+#añade-libro{
+  align-self: center;
+}
+
+
