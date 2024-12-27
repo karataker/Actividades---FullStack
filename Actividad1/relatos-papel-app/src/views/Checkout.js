@@ -1,17 +1,17 @@
 import React, { useEffect } from 'react';
-import useCart from '../hooks/useCart';
+import useCarrito from '../hooks/useCarrito';
 import { useNavigate } from 'react-router-dom';
 import BotonVolver from '../components/BotonVolver';
 import '../styles/checkout.css';
 
 
 const Checkout = () => {
-  const { cartItems, clearCart } = useCart();
+  const { cartItems, limpiaCarrito } = useCarrito();
   const navigate = useNavigate();
 
-  const handleCheckout = () => {
+  const realizaCheckout = () => {
     alert('Pedido realizado con éxito.');
-    clearCart();
+    limpiaCarrito();
    // window.location.href = '/main'; // Redirige a la página principal
   };
 
@@ -31,12 +31,12 @@ const Checkout = () => {
         <ul className="list-group mb-3">
           {cartItems.map((item, index) => (
             <li key={index} className="list-group-item">
-              <strong>{item.title}</strong> - {item.author}
+              <strong>{item.titulo}</strong> - {item.autor}
             </li>
           ))}
         </ul>
       )}
-      <button className="btn btn-primary" onClick={handleCheckout}>Proceder al pago</button>
+      <button className="btn btn-primary" onClick={realizaCheckout}>Proceder al pago</button>
     </div>
   );
 };

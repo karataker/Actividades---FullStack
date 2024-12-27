@@ -14,3 +14,10 @@
   width: 70px;
   height: 70px;
 }
+
+.centered-flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

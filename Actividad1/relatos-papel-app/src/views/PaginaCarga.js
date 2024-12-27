@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../styles/landing-page.css';
+import '../styles/pagina-carga.css';
 
-const LandingPage = () => {
+const PaginaCarga = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -16,7 +16,7 @@ const LandingPage = () => {
 
   return (
     <div className="landing-page">
-      <div className="d-flex flex-column justify-content-center align-items-center">
+      <div className="centered-flex-column">
         <div className="welcome-message">
           <h2>Bienvenido a Relatos de Papel</h2>
           <p>Explora nuestra colección de libros.</p>
@@ -30,4 +30,4 @@ const LandingPage = () => {
   );
 };
 
-export default LandingPage;
+export default PaginaCarga;

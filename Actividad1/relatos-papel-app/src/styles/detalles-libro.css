@@ -1,42 +1,42 @@
-.book-details {
+.detalles-libro {
     padding: 2rem;
     display: flex;
     flex-direction: column;
     text-align: left;
 }
 
-.book-details .row {
+.detalles-libro .row {
     display: flex;
     align-items: center;
 }
 
-.book-details .book-image {
+.detalles-libro .libro-imagen {
     width: 100%;
     max-width: 263px; 
     height: 380px;  
     object-fit: cover;
 }
 
-.book-details .details {
+.detalles-libro .details {
     display: flex;
     flex-direction: column;
     height: 100%;
 }
 
-.book-details .author {
+.detalles-libro .autor {
     font-style: italic;
     margin-bottom: 0.5rem;
     font-size: 1.1rem;
 }
 
-.book-details .title {
+.detalles-libro .titulo {
     font-weight: bold;
     margin-top: 0.5rem;
     font-size: 1.8rem;
     margin-bottom: 1rem;
 }
 
-.book-details .description {
+.detalles-libro .descripcion {
     margin-top: 1rem;
     font-size: 1.2rem;
 }
@@ -45,4 +45,8 @@
   align-self: center;
 }
 
-
+.carrito-icon {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+  }

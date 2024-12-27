@@ -1,4 +1,4 @@
-.cart {
+.carrito {
   position: fixed;
   top: 10%;
   right: 0;
@@ -9,11 +9,11 @@
   transition: transform 0.3s ease-in-out;
 }
 
-.cart--visible {
+.carrito--visible {
   transform: translateX(0);
 }
 
-.cart-toggle {
+.carrito-toggle {
   position: absolute;
   left: -170px;
   top: 0;
@@ -25,23 +25,23 @@
   z-index: 1000;
 }
 
-.cart-toggle:hover {
+.carrito-toggle:hover {
   background-color: green;
   color: white;
 }
 
-.cart-content {
+.carrito-content {
   padding: 1rem;
   background-color: rgb(213, 211, 211);
   max-height: 400px;
   overflow-y: auto;
 }
 
-.cart-content h3 {
+.carrito-content h3 {
   text-align: center;
 }
 
-.cart-icon {
+.carrito-icon {
   font-size: 1.5rem;
   margin-right: 0.5rem;
   vertical-align: middle;

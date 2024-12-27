@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const useCart = () => {
+const useCarrito = () => {
   const [cartItems, setCartItems] = useState(() => {
     const savedCart = localStorage.getItem('cartItems');
     return savedCart ? JSON.parse(savedCart) : [];
@@ -10,20 +10,20 @@ const useCart = () => {
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
   }, [cartItems]);
 
-  const addToCart = (item) => {
+  const añadeItemCarrito = (item) => {
     setCartItems((prevItems) => [...prevItems, item]);
   };
 
-  const removeFromCart = (index) => {
+  const borraItemCarrito = (index) => {
     setCartItems((prevItems) => prevItems.filter((_, i) => i !== index));
   };
 
-  const clearCart = () => {
+  const limpiaCarrito = () => {
     console.log('Clearing cart...');
     setCartItems([]);
   };
 
-  return { cartItems, addToCart, removeFromCart, clearCart };
+  return { cartItems, añadeItemCarrito, borraItemCarrito, limpiaCarrito };
 };
 
-export default useCart;
+export default useCarrito;

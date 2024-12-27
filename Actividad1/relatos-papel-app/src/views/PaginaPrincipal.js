@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';  
-import useCart from '../hooks/useCart';
-import Cart from '../components/Cart';
+import useCarrito from '../hooks/useCarrito';
+import Carrito from '../components/Carrito';
 import Libros from '../components/Libros';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../styles/main-page.css';
+import '../styles/pagina-principal.css';
 
 
-const MainPage = () => {
+const PaginaPrincipal = () => {
   const [search, setSearch] = useState('');
   const [loading, setLoading] = useState(true); // Estado de carga
-  const { cartItems, addToCart, removeFromCart } = useCart();
+  const { cartItems, añadeItemCarrito, borraItemCarrito } = useCarrito();
     
   // Simula la carga de libros
   useEffect(() => {
@@ -21,8 +21,8 @@ const MainPage = () => {
   }, []);
 
   const libros = Libros.getLibros();
-  const filteredBooks = libros.filter((libro) =>
-    libro.title.toLowerCase().includes(search.toLowerCase())
+  const busquedaLibros = libros.filter((libro) =>
+    libro.titulo.toLowerCase().includes(search.toLowerCase())
   );
 
 return (
@@ -37,7 +37,7 @@ return (
         
         {/* Reloj de carga (spinner) */}
         {loading ? (
-            <div className="d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
+           <div className="full-height-center">
                 <div className="spinner-border text-primary" role="status">
                     <span className="visually-hidden">Cargando...</span>
                 </div>
@@ -46,20 +46,20 @@ return (
             <div className="container">
                 <div className="row row-cols-1 row-cols-md-3 g-4">
                     {/* Muestra los libros filtrados */}
-                    {filteredBooks.map((book) => (
-                        <div key={book.id} className="col">
+                    {busquedaLibros.map((libro) => (
+                        <div key={libro.id} className="col">
                             <div className="card h-100">
-                                <Link to={`/book/${book.id}`}>
-                                    <img src={book.imagen} className="card-img-top" alt={book.title} />
+                                <Link to={`/libro/${libro.id}`}>
+                                    <img src={libro.imagen} className="card-img-top" alt={libro.titulo} />
                                 </Link>
                                 <div className="card-body">
-                                    <h5 className="card-title">{book.title}</h5>
-                                    <p className="card-text">{book.author}</p>
+                                    <h5 className="card-title">{libro.titulo}</h5>
+                                    <p className="card-text">{libro.autor}</p>
                                     <button
                                         className="btn btn-primary"
                                         onClick={(e) => {
                                             e.preventDefault();
-                                            addToCart(book);
+                                            añadeItemCarrito(libro);
                                         }}
                                     >
                                         Añadir al carrito
@@ -72,9 +72,9 @@ return (
             </div>
         )}
 
-        <Cart items={cartItems} removeFromCart={removeFromCart} />
+        <Carrito items={cartItems} borraItemCarrito={borraItemCarrito} />
     </div>
 );
 };
 
-export default MainPage;
+export default PaginaPrincipal;

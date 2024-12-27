@@ -1,16 +1,16 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import LandingPage from '../views/LandingPage';
-import MainPage from '../views/MainPage';
-import BookDetails from '../views/BookDetails';
+import PaginaCarga from '../views/PaginaCarga';
+import PaginaPrincipal from '../views/PaginaPrincipal';
+import DetalleLibro from '../views/DetalleLibro';
 import Checkout from '../views/Checkout';
 
 const GlobalRouter = () => {
   return (
     <Routes>
-      <Route path="/" element={<LandingPage />} />
-      <Route path="/main" element={<MainPage />} />
-      <Route path="/book/:id" element={<BookDetails />} />
+      <Route path="/" element={<PaginaCarga />} />
+      <Route path="/main" element={<PaginaPrincipal />} />
+      <Route path="/libro/:id" element={<DetalleLibro />} />
       <Route path="/checkout" element={<Checkout />} />
     </Routes>
   );
