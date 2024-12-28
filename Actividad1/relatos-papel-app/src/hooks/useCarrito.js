@@ -19,7 +19,6 @@ const useCarrito = () => {
   };
 
   const limpiaCarrito = () => {
-    console.log('Clearing cart...');
     setCartItems([]);
   };
 
